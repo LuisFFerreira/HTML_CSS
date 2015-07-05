@@ -1,0 +1,16 @@
+.head{
+	width:10%;
+	height:40px;
+	background-color:lightblue;
+	padding:10px;
+	margin:5px;
+	float:left;
+	}
+.news{
+	width:80%;
+	height:40px;
+	background-color:lightblue;
+	padding:10px;
+	margin:5px;
+	float:left;
+	}

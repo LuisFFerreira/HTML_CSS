@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<link rel="stylesheet" href="endless.css">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script>
+	$(function(){
+	
+		$.ajax({
+			url:'https://hacker-news.firebaseio.com/v0/maxitem.json?print=pretty',
+			success: function(data){
+			$("#maxitem").append(data);
+			},
+			error: function(){
+				alert('Falha no carregamento');
+			}
+		});
+});
+</script>
+
+</head>
+<body>
+<div id="news">
+<h1>Noticias</h1>
+</div>
+<script>
+	$(function(){
+	
+	
+	var max = 914211;
+
+		function loadNews(){
+		
+			for(var i=max;i>max-15;i--){
+				$.ajax({
+						url:'http://hacker-news.firebaseio.com/v0/item/'+ i +'.json',
+						datatype: 'jsonp',
+						success: function(data){
+						var dt = new Date(data.time*1000);
+						var year=dt.getFullYear();
+						var month=dt.getMonth();
+						var date=dt.getDate();
+						$("#news").append('<div class="head"><b> '+ data.by +'</b><br />'+date+'-'+month+'-'+year+'</div><div class="news">Title: <b>'+data.title+'</b><br /><a href="'+data.url+'">'+data.url+'</a></div><div style="clear:both;"></div>');
+						},
+						error: function(){
+							alert('Falha no carregamento da noticia');
+						}
+				});
+				
+			}
+			max=max-15;			
+		}
+		loadNews();
+		
+		var bottomDistance = 400;
+		$(window).scroll(function(){
+			if(($("body").height()-$(window).scrollTop()-$(window).height())<bottomDistance){
+				loadNews();
+			}
+		});
+		
+	});
+</script>
+</body>
+</html>
+	

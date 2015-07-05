@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<meta name="viewport" content="width=device-width">
+		<link rel="stylesheet" href="index.css">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+		<script>
+			$(function(){
+				$("#menu").click(function(){
+					$('header').animate({left:'0px'},500);
+				});
+				$("#back").click(function(){
+					$('header').animate({left:'-294px'},500);
+				});
+			});
+		</script>
+	</head>
+	
+	<body>
+		<header>
+			<div id="top-header">
+				<img src="" /><span id="client">John Doe</span>
+				<img id="back" src="assets/Images/Side Menu/left-arrow.svg" />
+			</div>
+				<ul>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-dashboard.svg" />Dashboard</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-accounts.svg" />Accounts</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-cards.svg" />Cards</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-payments.svg" />Payment</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-transfers.svg" />Transfers</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-airtime.svg" />Airtime</a></li>
+					<li><a href="#doc"><img src="assets/Images/Side Menu/ic-settings.svg" />Settings</a></li>
+				<ul>
+			</header>
+		<div id="content">
+			<div id="top-content"><img id="menu" src="assets/Images/Side Menu/menu-alt-512.png " />
+			<span>Dashboard</span>
+			</div>
+			<div id="top-content-2">
+				<span>Balance</span><br />
+				<span id="num-id">N 979153.36</span><br />
+				<span id="value">16.500 SP</span>
+			</div>
+			<table class="">
+				<th colspan="2">Latest Transactions</th>
+				<tr>
+					<td class="where" align="left">ATM Lagos<br /><span class="date">Today</span></td>
+					<td class="value-neg" align="right">- N 450.00<br /><span class="type">Bank Withdraw</span></td>
+				</tr>
+				<tr>
+					<td class="where" align="left">ATM Lagos<br /><span class="date">Yesterday</span></td>
+					<td class="value-pos" align="right">+ N 450.00<br /><span class="type">Bank Withdraw</span></td>
+				</tr>
+				<tr>
+					<td class="where" align="left">003 645 6548 65<br /><span class="date">01/06/2015</span></td>
+					<td class="value-neg" align="right">- 100 SP<br /><span class="type">Airtime recharge</span></td>
+				</tr>
+				<tr>
+					<td class="where" align="left">John Doe<br /><span class="date">31/05/2015</span></td>
+					<td class="value-pos" align="right">+ N 450.00<br /><span class="type">Transfer</span></td>
+				</tr>
+			</table>
+		</div>
+	</body>
+	
+</html>
